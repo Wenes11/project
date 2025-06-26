@@ -12,7 +12,7 @@ public class User implements Serializable {
     private String email;
     private String telefone;
     private String senha;
-
+    private int number;
     public User(){
     }
  // criando o construtor;
