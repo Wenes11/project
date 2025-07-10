@@ -1,3 +1,4 @@
+// Service serve para implementar a logica e comunicação com banco de dados do Projeto.
 package com.halflight.project.services;
 
 import com.halflight.project.entities.User;

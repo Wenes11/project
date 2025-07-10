@@ -1,12 +1,11 @@
 package com.halflight.project.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
+
 import javax.annotation.processing.Generated;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 @Entity
 @Table(name="tb-user")
@@ -20,6 +19,11 @@ public class User implements Serializable {
     private String email;
     private String telefone;
     private String senha;
+
+
+    // Criei uma lista de pedido
+    @OneToMany(mappedBy = "client")
+    private List<Pedido> orders = new ArrayList<>();
 
     public User(){
     }
@@ -71,7 +75,9 @@ public class User implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    public List<Pedido> getOrders() {
+        return orders;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
